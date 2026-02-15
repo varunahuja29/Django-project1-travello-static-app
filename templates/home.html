@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hello {{greetName}}!</h1>
+
+<h1> ADD TWO NUMBERS USING GET REQUEST... SENDS DATA IN URL PARAMS</h1>
+<form action="addUsingGetUrl">
+    Enter 1st number: <input type="text" name="num1"><br>
+    Enter 2nd number: <input type="text" name="num2"><br>
+    <input type="submit">
+</form>
+
+<h1> ADD TWO NUMBERS USING POST REQUEST... DOES NOT SENDS DATA IN URL PARAMS</h1>
+<form action="addUsingPostUrl" method="post">
+    {% csrf_token %}
+    Enter 1st number: <input type="text" name="numPost1"><br>
+    Enter 2nd number: <input type="text" name="numPost2"><br>
+    <input type="submit">
+</form>
+
+{% endblock %}
